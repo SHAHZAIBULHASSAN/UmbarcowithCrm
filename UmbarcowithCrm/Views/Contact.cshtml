@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = "master.cshtml";
+}
+
+
+<div class="container">
+    @if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+    {
+        <p><b>Your message was sent Successfully</b></p>
+    }
+    else
+    {
+        Html.RenderAction("RenderForm", "ContactSurface");
+    }
+</div>
